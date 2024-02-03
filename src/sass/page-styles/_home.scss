@@ -1,0 +1,29 @@
+.custom-home {
+  margin-top: 6.5rem;
+  display: flex;
+  flex-direction: column;
+
+  &__news-cards-container {
+    max-width: 77%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+
+    &__heading {
+      margin: 2rem 0;
+    }
+
+    &__card-container {
+      display: flex;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      &__card {
+        min-width: 19.5rem;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}

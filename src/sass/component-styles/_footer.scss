@@ -1,0 +1,17 @@
+.custom-footer {
+  background-color: var(--color-gray-dark);
+  width: 100%;
+  margin: 2rem 0 0 0;
+
+  &__link {
+    color: var(--color-white-light);
+
+    &:hover {
+      color: var(--color-primary-light);
+    }
+  }
+
+  &__paragraph {
+    color: var(--color-white);
+  }
+}

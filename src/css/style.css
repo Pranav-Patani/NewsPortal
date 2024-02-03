@@ -1,0 +1,81 @@
+:root {
+  --color-primary: #16a34a;
+  --color-primary-light: #4ade80;
+  --color-primary-dark: #166534;
+  --color-gray-dark: #171717;
+  --color-white: #dcfce7;
+  --color-white-light: #f0fdf4; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
+
+.custom-home {
+  margin-top: 6.5rem;
+  display: flex;
+  flex-direction: column; }
+  .custom-home__news-cards-container {
+    max-width: 77%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column; }
+    .custom-home__news-cards-container__heading {
+      margin: 2rem 0; }
+    .custom-home__news-cards-container__card-container {
+      display: flex;
+      overflow-x: auto; }
+      .custom-home__news-cards-container__card-container::-webkit-scrollbar {
+        display: none; }
+      .custom-home__news-cards-container__card-container__card {
+        min-width: 19.5rem;
+        margin: 0.5rem 0; }
+
+.custom-carousel {
+  width: 77%;
+  margin: auto;
+  border-radius: 0.7rem; }
+  .custom-carousel__img {
+    background-image: linear-gradient(to bottom right, black, black);
+    border-radius: 0.7rem;
+    width: 100%; }
+
+.custom-navbar__logo {
+  width: 12rem;
+  margin: 0 1rem; }
+
+.custom-navbar__sort {
+  background-color: var(--color-primary);
+  border: none; }
+
+.custom-navbar__search-bar {
+  width: 30%;
+  transition: 0.2s; }
+  .custom-navbar__search-bar:active {
+    border: 2px solid var(--color-primary-light); }
+
+.custom-navbar__search-btn {
+  border: 1px solid var(--color-primary); }
+  .custom-navbar__search-btn:hover {
+    border: 1px solid var(--color-primary-light); }
+  .custom-navbar__search-btn:active {
+    border: 1px solid var(--color-primary-dark); }
+
+.custom-footer {
+  background-color: var(--color-gray-dark);
+  width: 100%;
+  margin: 2rem 0 0 0; }
+  .custom-footer__link {
+    color: var(--color-white-light); }
+    .custom-footer__link:hover {
+      color: var(--color-primary-light); }
+  .custom-footer__paragraph {
+    color: var(--color-white); }
+
+.custom-newscards__btn {
+  background-color: var(--color-primary);
+  color: var(--color-white-light); }

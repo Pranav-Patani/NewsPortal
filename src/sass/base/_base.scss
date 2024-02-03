@@ -1,0 +1,19 @@
+:root {
+  --color-primary: #16a34a; //green-600
+  --color-primary-light: #4ade80; //green-400
+  --color-primary-dark: #166534; //green-800
+  --color-gray-dark: #171717;
+  --color-white: #dcfce7; //green-100
+  --color-white-light: #f0fdf4; //green-50
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}

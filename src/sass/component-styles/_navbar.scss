@@ -1,0 +1,30 @@
+.custom-navbar {
+  &__logo {
+    width: 12rem;
+    margin: 0 1rem;
+  }
+
+  &__sort {
+    background-color: var(--color-primary);
+    border: none;
+  }
+
+  &__search-bar {
+    width: 30%;
+    transition: 0.2s;
+
+    &:active {
+      border: 2px solid var(--color-primary-light);
+    }
+  }
+
+  &__search-btn {
+    border: 1px solid var(--color-primary);
+    &:hover {
+      border: 1px solid var(--color-primary-light);
+    }
+    &:active {
+      border: 1px solid var(--color-primary-dark);
+    }
+  }
+}

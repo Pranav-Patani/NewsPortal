@@ -1,0 +1,10 @@
+.custom-carousel {
+  width: 77%;
+  margin: auto;
+  border-radius: 0.7rem;
+  &__img {
+    background-image: linear-gradient(to bottom right, black, black);
+    border-radius: 0.7rem;
+    width: 100%;
+  }
+}
