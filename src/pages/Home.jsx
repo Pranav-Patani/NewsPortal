@@ -1,8 +1,11 @@
+import { useContext } from "react";
+
 import Carousel from "../components/Carousel";
 import NewsCards from "../components/NewsCards";
-
+import FeedContext from "../contexts/FeedContext";
 const Home = () => {
-  const sampleNews = ["", "", "", "", "", ""];
+  const articles = useContext(FeedContext);
+
   return (
     <>
       <div className="container text-center custom-home">
@@ -15,12 +18,12 @@ const Home = () => {
             <h2>Persnoalized Recommendations</h2>
           </div>
           <div className="custom-home__news-cards-container__card-container">
-            {sampleNews.map((cur) => (
+            {articles.map(({ guid, title }) => (
               <div
-                key={cur}
+                key={guid}
                 className="custom-home__news-cards-container__card-container__card"
               >
-                <NewsCards />
+                <NewsCards title={title} />
               </div>
             ))}
           </div>

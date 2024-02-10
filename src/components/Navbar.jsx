@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "/logo.png";
+import logo from "/svg-logo.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navbar = () => {
