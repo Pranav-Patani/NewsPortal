@@ -1,6 +1,16 @@
-.custom-newscards {
+.custom-newscard {
+  height: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   &__btn {
     background-color: var(--color-primary);
-    color: var(--color-white-light);
+    color: var(--color-white);
+    margin: 0 auto 1rem auto;
+    width: 77%;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
+    }
   }
 }

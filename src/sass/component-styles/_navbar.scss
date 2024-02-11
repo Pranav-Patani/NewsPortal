@@ -4,11 +4,6 @@
     margin: 0 1rem;
   }
 
-  &__sort {
-    background-color: var(--color-primary);
-    border: none;
-  }
-
   &__search-bar {
     width: 30%;
     transition: 0.2s;
@@ -25,6 +20,27 @@
     }
     &:active {
       border: 1px solid var(--color-primary-dark);
+    }
+  }
+
+  &__login {
+    margin-left: 1rem;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-primary);
+    }
+  }
+
+  &__settings {
+    &__logout {
+      border-top: 1px solid var(--color-secondary);
+      width: 80%;
+      text-align: center;
+      margin: auto;
     }
   }
 }

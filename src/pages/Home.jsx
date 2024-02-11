@@ -15,7 +15,7 @@ const Home = () => {
 
         <div className="custom-home__news-cards-container">
           <div className="custom-home__news-cards-container__heading">
-            <h2>Persnoalized Recommendations</h2>
+            <h2>Personalized Recommendations</h2>
           </div>
           <div className="custom-home__news-cards-container__card-container">
             {articles.map(({ guid, title }) => (

@@ -21,11 +21,11 @@ let app = express();
 app.use(cors());
 
 const server = app.listen("4000", () => {
-  console.log("App is litening at http://localhost:4000");
+  console.log("App is listening at http://localhost:4000");
 });
 
-app.get('/', (req, res)=>{
+app.get("/", (req, res) => {
   res.send(articles);
-})
+});
 
 export default server;

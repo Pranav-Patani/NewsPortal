@@ -1,0 +1,10 @@
+.sort-btn {
+  background-color: var(--color-secondary);
+  border: none;
+  transition: 0.3s all;
+
+  &:hover {
+    background-color: var(--color-secondary-light);
+    color: var(--color-black);
+  }
+}

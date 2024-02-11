@@ -40,22 +40,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </li>
-              <li
-                className="nav-item"
-                style={{ position: "relative", top: 0.5 + "rem" }}
-              >
-                <Dropdown>
-                  <Dropdown.Toggle variant="none" id="dropdown-basic">
-                    Cateogries
-                  </Dropdown.Toggle>
 
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Sports</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Crime</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">Politics</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </li>
               <li
                 className="nav-item"
                 style={{
@@ -66,16 +51,17 @@ const Navbar = () => {
               >
                 <Dropdown>
                   <Dropdown.Toggle variant="none" id="dropdown-basic">
-                    Preferences
+                    Settings
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">
-                      Another action
-                    </Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">
-                      Something else
+                    <Dropdown.Item href="#/action-1">Theme</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Preferences</Dropdown.Item>
+                    <Dropdown.Item
+                      className="custom-navbar__settings__logout"
+                      href="#/action-3"
+                    >
+                      Logout
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -92,22 +78,11 @@ const Navbar = () => {
               Search
             </button>
 
-            <Dropdown>
-              <Dropdown.Toggle
-                variant="success"
-                className="custom-navbar__sort"
-                id="dropdown-basic"
-                style={{ marginLeft: 0.5 + "rem" }}
-              >
-                Sort
-              </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
+
+            <button className="btn custom-navbar__login" type="submit">
+              Login
+            </button>
           </div>
         </div>
       </nav>

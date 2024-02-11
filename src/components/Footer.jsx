@@ -13,22 +13,17 @@ const Footer = () => {
           </li>
           <li className="nav-item">
             <Link to="/" className="nav-link custom-footer__link">
-              Features
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
-              Pricing
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
-              FAQs
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
               About
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/" className="nav-link custom-footer__link">
+              Credits
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/" className="nav-link custom-footer__link">
+              Contact
             </Link>
           </li>
         </ul>
