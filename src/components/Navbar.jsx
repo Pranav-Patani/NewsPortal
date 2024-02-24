@@ -9,7 +9,6 @@ const Navbar = () => {
       {/* Navigation bar with fixed-top and expanded options */}
       <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-
           {/* Link to home with logo */}
           <Link to="/">
             <img src={logo} alt="logo" className="custom-navbar__logo" />
@@ -30,7 +29,6 @@ const Navbar = () => {
 
           {/* Navbar collapse section */}
           <div className="collapse navbar-collapse" id="navbarScroll">
-
             {/* Navbar links with scrolling and custom styling */}
             <ul
               className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -39,7 +37,7 @@ const Navbar = () => {
               {/* Home link */}
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
-                  <button type="button" className="btn">
+                  <button type="button" className="btn custom-navbar__btn">
                     Home
                   </button>
                 </Link>
@@ -48,7 +46,7 @@ const Navbar = () => {
               {/* About Us link */}
               <li className="nav-item">
                 <Link className="nav-link" to="/about-us">
-                  <button type="button" className="btn">
+                  <button type="button" className="btn custom-navbar__btn">
                     About Us
                   </button>
                 </Link>

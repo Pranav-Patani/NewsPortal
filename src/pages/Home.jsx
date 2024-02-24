@@ -7,24 +7,67 @@ import FeedContext from "../contexts/FeedContext";
 
 // Home component
 const Home = () => {
+  const categoryList = [
+    {
+      name: "India",
+      url: "https://timesofindia.indiatimes.com/rssfeeds/-2128936835.cms",
+    },
+    {
+      name: "World",
+      url: "https://timesofindia.indiatimes.com/rssfeeds/296589292.cms",
+    },
+    {
+      name: "NRI",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/7098551.cms",
+    },
+    {
+      name: "Business",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/1898055.cms",
+    },
+    {
+      name: "US",
+      url: "https://timesofindia.indiatimes.com/rssfeeds_us/72258322.cms",
+    },
+    {
+      name: "Crickcet",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/54829575.cms",
+    },
+    {
+      name: "Sports",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/4719148.cms",
+    },
+    {
+      name: "Science",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms",
+    },
+    {
+      name: "Environment",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/2647163.cms",
+    },
+    {
+      name: "Tech",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/66949542.cms",
+    },
+    {
+      name: "Education",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/913168846.cms",
+    },
+    {
+      name: "Entertainmetn",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms",
+    },
+    {
+      name: "Life & Style",
+      url: "http://timesofindia.indiatimes.com/rssfeeds/2886704.cms",
+    },
+    {
+      name: "Astrology",
+      url: "https://timesofindia.indiatimes.com/rssfeeds/65857041.cms",
+    },
+  ];
+
   // Using useContext to access the articles from FeedContext
   const articles = useContext(FeedContext);
-  const categoryList = [
-    "India",
-    "World",
-    "NRI",
-    "Business",
-    "US",
-    "Cricket",
-    "Sports",
-    "Science",
-    "Environment",
-    "Tech",
-    "Education",
-    "Entertainment",
-    "Life & Style",
-    "Astrology",
-  ];
 
   return (
     <>
@@ -40,17 +83,15 @@ const Home = () => {
             Categories
           </h2>
           <div className="custom-home__categories-container__categories-tabs">
-            {categoryList.map((cur) => (
+            {categoryList.map(({ name, url }) => (
               <Link
-                key={cur}
+                key={name}
                 to="/news"
                 className="custom-home__categories-container__categories-tabs__link"
+                onClick={() => console.log(url)}
               >
-                <div
-                  key="cur"
-                  className="custom-home__categories-container__categories-tabs__tab"
-                >
-                  {cur}
+                <div className="custom-home__categories-container__categories-tabs__tab">
+                  {name}
                 </div>
               </Link>
             ))}

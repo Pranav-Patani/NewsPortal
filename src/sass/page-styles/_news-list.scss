@@ -12,13 +12,23 @@
     flex-direction: column;
 
     &__card {
-      margin: auto;
+      margin: 1.5rem auto 1.5rem auto;
       width: 70%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
       &-img {
-        height: 10rem;
+        height: 12rem;
         object-fit: cover;
       }
       &-body {
+        box-shadow: -1px -4px 23px -6px rgba(10, 10, 10, 1);
+
+        &__title {
+          font-size: 20px;
+          font-weight: bold;
+        }
+
         &__btn {
           background-color: var(--color-primary);
           color: var(--color-white);
