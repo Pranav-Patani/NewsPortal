@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 
 // RSS feed URL
-const feedURL = "https://www.thehindu.com/news/feeder/default.rss";
+const feedURL = "https://timesofindia.indiatimes.com/rssfeeds/-2128672765.cms";
 
 // Creating an instance of RSSParser
 const parser = new RSSParser();

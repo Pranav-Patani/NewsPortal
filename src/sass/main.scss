@@ -1,8 +1,9 @@
 // Importing base styles
 @import "./base/base";
 
-// Importing page-specific styles for the home page
+// Importing page-specific styles
 @import "./page-styles/home";
+@import "./page-styles/news-list";
 
 // Importing styles for individual components
 @import "./component-styles/carousel";

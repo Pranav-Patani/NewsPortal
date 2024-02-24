@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import sample from "/Sample.jpg";
 
 // NewsCards component receives a 'title' prop
-const NewsCards = ({ title }) => {
+const NewsCards = ({ title, link }) => {
   return (
     <>
       {/* News card container with custom styling */}
@@ -16,9 +16,9 @@ const NewsCards = ({ title }) => {
         </div>
 
         {/* Read More button linking to the root path */}
-        <Link to="/" className="btn custom-newscard__btn">
+        <a href={link} target="_blank" className="btn custom-newscard__btn">
           Read More
-        </Link>
+        </a>
       </div>
     </>
   );

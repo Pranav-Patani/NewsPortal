@@ -6,6 +6,7 @@ import "./css/style.css";
 // Importing components
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import NewsList from "./pages/NewsList";
 import Footer from "./components/Footer";
 
 // App component
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         {/* Route for the Home page */}
         <Route path="/" element={<Home />} />
+        <Route path="/news" element={<NewsList />} />
       </Routes>
 
       {/* Footer component rendered at the bottom */}
