@@ -1,12 +1,14 @@
-//base
+// Importing base styles
 @import "./base/base";
 
-//page-styles
+// Importing page-specific styles for the home page
 @import "./page-styles/home";
 
-//component-styles
+// Importing styles for individual components
 @import "./component-styles/carousel";
 @import "./component-styles/navbar";
 @import "./component-styles/footer";
 @import "./component-styles/news-cards";
-@import "./component-styles/_sort";
+@import "./component-styles/_sort"; // Assuming this is a partial
+
+// You might have more imports or configurations based on your project structure

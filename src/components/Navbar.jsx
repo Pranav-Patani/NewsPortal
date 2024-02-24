@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import logo from "/svg-logo.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 
+// Navbar component
 const Navbar = () => {
   return (
     <>
+      {/* Navigation bar with fixed-top and expanded options */}
       <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
+
+          {/* Link to home with logo */}
           <Link to="/">
             <img src={logo} alt="logo" className="custom-navbar__logo" />
           </Link>
+
+          {/* Navbar toggler button for mobile view */}
           <button
             className="navbar-toggler"
             type="button"
@@ -21,11 +27,16 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          {/* Navbar collapse section */}
           <div className="collapse navbar-collapse" id="navbarScroll">
+
+            {/* Navbar links with scrolling and custom styling */}
             <ul
               className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
               style={{ bsScrollHeight: 100 + "px" }}
             >
+              {/* Home link */}
               <li className="nav-item">
                 <Link className="nav-link active" aria-current="page" to="/">
                   <button type="button" className="btn">
@@ -33,6 +44,8 @@ const Navbar = () => {
                   </button>
                 </Link>
               </li>
+
+              {/* About Us link */}
               <li className="nav-item">
                 <Link className="nav-link" to="/about-us">
                   <button type="button" className="btn">
@@ -41,6 +54,7 @@ const Navbar = () => {
                 </Link>
               </li>
 
+              {/* Settings dropdown */}
               <li
                 className="nav-item"
                 style={{
@@ -54,6 +68,7 @@ const Navbar = () => {
                     Settings
                   </Dropdown.Toggle>
 
+                  {/* Dropdown menu with options */}
                   <Dropdown.Menu>
                     <Dropdown.Item href="#/action-1">Theme</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Preferences</Dropdown.Item>
@@ -68,18 +83,20 @@ const Navbar = () => {
               </li>
             </ul>
 
+            {/* Search bar */}
             <input
               className="form-control me-2 custom-navbar__search-bar"
               type="search"
               placeholder="Search"
               aria-label="Search"
             />
+
+            {/* Search button */}
             <button className="btn custom-navbar__search-btn" type="submit">
               Search
             </button>
 
-
-
+            {/* Login button */}
             <button className="btn custom-navbar__login" type="submit">
               Login
             </button>
@@ -90,4 +107,5 @@ const Navbar = () => {
   );
 };
 
+// Exporting the Navbar component
 export default Navbar;
