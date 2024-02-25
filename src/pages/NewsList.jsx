@@ -6,6 +6,10 @@ const NewsList = () => {
   const filteredArticles = articles.filter(
     ({ contentSnippet }) => contentSnippet
   );
+  const getDate = (newDate) => {
+    let customDate = new Date(newDate);
+    return `${customDate.toDateString()} at ${customDate.toLocaleTimeString()}`;
+  };
   return (
     <>
       <div className="section__news-list">
@@ -37,7 +41,9 @@ const NewsList = () => {
                     {contentSnippet.substring(0, 300)}...
                   </p>
                   <p className="section__news-list__content__card-body__date card-text">
-                    <small className="text-muted">Published: {pubDate}</small>
+                    <small className="text-muted">
+                      Published: {getDate(pubDate)}
+                    </small>
                   </p>
                   <a
                     href={link}
