@@ -62,7 +62,7 @@ body {
       margin: 2rem 0; }
     .custom-home__news-cards-container__card-container {
       display: flex;
-      overflow-x: auto; }
+      overflow: auto; }
       .custom-home__news-cards-container__card-container::-webkit-scrollbar {
         display: none; }
       .custom-home__news-cards-container__card-container__card {

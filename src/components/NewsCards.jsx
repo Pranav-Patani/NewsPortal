@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
-import sample from "/Sample.jpg";
-
 // NewsCards component receives a 'title' prop
-const NewsCards = ({ title, link }) => {
+const NewsCards = ({ title, link, imgUrl }) => {
   return (
     <>
       {/* News card container with custom styling */}
       <div className="card custom-newscard" style={{ width: 18 + "rem" }}>
         {/* Image section using the 'sample' image */}
-        <img src={sample} className="card-img-top" alt="..." />
+        <img src={imgUrl} className="card-img-top" alt="news" />
 
         {/* Body section containing the news title */}
         <div className="card-body custom-newscard__body">

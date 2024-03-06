@@ -67,7 +67,7 @@ const Home = () => {
   ];
 
   // Using useContext to access the articles from FeedContext
-  const articles = useContext(FeedContext);
+  const { articles, setCategory } = useContext(FeedContext);
 
   return (
     <>
@@ -88,7 +88,7 @@ const Home = () => {
                 key={name}
                 to="/news"
                 className="custom-home__categories-container__categories-tabs__link"
-                onClick={() => console.log(url)}
+                onClick={() => setCategory(name)}
               >
                 <div className="custom-home__categories-container__categories-tabs__tab">
                   {name}
@@ -108,12 +108,12 @@ const Home = () => {
           {/* Container for the news cards */}
           <div className="custom-home__news-cards-container__card-container">
             {/* Mapping through articles and rendering NewsCards for each */}
-            {articles.map(({ guid, title, link }) => (
+            {articles.map(({ guid, title, link, enclosure: { url } }) => (
               <div
                 key={guid}
                 className="custom-home__news-cards-container__card-container__card"
               >
-                <NewsCards title={title} link={link} />
+                <NewsCards title={title} link={link} imgUrl={url} />
               </div>
             ))}
           </div>

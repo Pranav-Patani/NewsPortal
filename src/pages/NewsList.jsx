@@ -2,7 +2,7 @@ import { useContext } from "react";
 import FeedContext from "../contexts/FeedContext";
 
 const NewsList = () => {
-  const articles = useContext(FeedContext);
+  const { articles, category } = useContext(FeedContext);
   const filteredArticles = articles.filter(
     ({ contentSnippet }) => contentSnippet
   );
@@ -13,7 +13,7 @@ const NewsList = () => {
   return (
     <>
       <div className="section__news-list">
-        <h1 className="section__news-list__heading">Category News</h1>
+        <h1 className="section__news-list__heading">{category}</h1>
         <div className="section__news-list__content">
           {filteredArticles.map(
             ({

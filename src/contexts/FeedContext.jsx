@@ -8,6 +8,7 @@ const FeedContext = createContext([]);
 export const FeedProvider = ({ children }) => {
   // State to store articles
   const [articles, setArticles] = useState([]);
+  const [category, setCategory] = useState(["Category"]);
 
   // Function to fetch articles from the server
   const getArticles = async () => {
@@ -26,7 +27,9 @@ export const FeedProvider = ({ children }) => {
 
   // Providing the articles through the FeedContext.Provider
   return (
-    <FeedContext.Provider value={articles}>{children}</FeedContext.Provider>
+    <FeedContext.Provider value={{ articles, category, setCategory }}>
+      {children}
+    </FeedContext.Provider>
   );
 };
 
