@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Carousel from "../components/Carousel";
 import NewsCards from "../components/NewsCards";
@@ -67,7 +67,7 @@ const Home = () => {
   ];
 
   // Using useContext to access the articles from FeedContext
-  const { articles, setCategory } = useContext(FeedContext);
+  const { articles, setCategory, setFeedUrl } = useContext(FeedContext);
 
   return (
     <>
@@ -86,9 +86,12 @@ const Home = () => {
             {categoryList.map(({ name, url }) => (
               <Link
                 key={name}
-                to="/news"
+                to={`/news/${name.toLowerCase()}`}
                 className="custom-home__categories-container__categories-tabs__link"
-                onClick={() => setCategory(name)}
+                onClick={() => {
+                  setCategory(name);
+                  setFeedUrl(url);
+                }}
               >
                 <div className="custom-home__categories-container__categories-tabs__tab">
                   {name}

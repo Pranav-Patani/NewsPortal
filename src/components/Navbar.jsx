@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import logo from "/svg-logo.svg";
 import Dropdown from "react-bootstrap/Dropdown";
+import { useAuth0 } from "@auth0/auth0-react";
 
 // Navbar component
 const Navbar = () => {
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   return (
     <>
       {/* Navigation bar with fixed-top and expanded options */}
@@ -95,8 +97,19 @@ const Navbar = () => {
             </button>
 
             {/* Login button */}
-            <button className="btn custom-navbar__login" type="submit">
-              Login
+            <button
+              className="btn custom-navbar__login"
+              type="submit"
+              onClick={
+                isAuthenticated
+                  ? () =>
+                      logout({
+                        logoutParams: { returnTo: window.location.origin },
+                      })
+                  : () => loginWithRedirect()
+              }
+            >
+              {isAuthenticated ? `Logout` : `Login`}
             </button>
           </div>
         </div>
