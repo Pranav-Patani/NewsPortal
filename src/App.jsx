@@ -7,6 +7,7 @@ import "./css/style.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import NewsList from "./pages/NewsList";
+import UserProfile from "./pages/UserProfile";
 import Footer from "./components/Footer";
 import FeedContext from "./contexts/FeedContext";
 
@@ -25,6 +26,7 @@ const App = () => {
         {/* Route for the Home page */}
         <Route path="/" element={<Home />} />
         <Route path="/news/:category" element={<NewsList />} />
+        <Route path="/user" element={<UserProfile />} />
       </Routes>
 
       {/* Footer component rendered at the bottom */}

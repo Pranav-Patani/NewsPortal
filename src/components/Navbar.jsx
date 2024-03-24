@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "/svg-logo.svg";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -6,10 +6,11 @@ import { useAuth0 } from "@auth0/auth0-react";
 // Navbar component
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const navigate = useNavigate();
   return (
     <>
       {/* Navigation bar with fixed-top and expanded options */}
-      <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary custom-navbar">
         <div className="container-fluid">
           {/* Link to home with logo */}
           <Link to="/">
@@ -53,6 +54,17 @@ const Navbar = () => {
                   </button>
                 </Link>
               </li>
+              {isAuthenticated ? (
+                <li className="nav-item">
+                  <Link className="nav-link" to="/user">
+                    <button type="button" className="btn custom-navbar__btn">
+                      Profile
+                    </button>
+                  </Link>
+                </li>
+              ) : (
+                ""
+              )}
 
               {/* Settings dropdown */}
               <li
@@ -63,23 +75,40 @@ const Navbar = () => {
                   marginLeft: 0.5 + "rem",
                 }}
               >
-                <Dropdown>
-                  <Dropdown.Toggle variant="none" id="dropdown-basic">
-                    Settings
-                  </Dropdown.Toggle>
+                {isAuthenticated ? (
+                  <Dropdown>
+                    <Dropdown.Toggle variant="none" id="dropdown-basic">
+                      Settings
+                    </Dropdown.Toggle>
 
-                  {/* Dropdown menu with options */}
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Theme</Dropdown.Item>
-                    <Dropdown.Item href="#/action-2">Preferences</Dropdown.Item>
-                    <Dropdown.Item
-                      className="custom-navbar__settings__logout"
-                      href="#/action-3"
-                    >
-                      Logout
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
+                    {/* Dropdown menu with options */}
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Theme</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">
+                        Preferences
+                      </Dropdown.Item>
+                      <Dropdown.Item
+                        className="custom-navbar__settings__logout"
+                        href="#/action-3"
+                      >
+                        <button
+                          className="custom-navbar__settings__logout-btn"
+                          onClick={() =>
+                            logout({
+                              logoutParams: {
+                                returnTo: window.location.origin,
+                              },
+                            })
+                          }
+                        >
+                          Logout
+                        </button>
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
+                  ""
+                )}
               </li>
             </ul>
 
