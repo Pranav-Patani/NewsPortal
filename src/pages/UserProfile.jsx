@@ -1,5 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import FeedContext from "../contexts/FeedContext";
 
 const UserProfile = () => {
   const preferences = [
@@ -25,7 +27,7 @@ const UserProfile = () => {
     },
   ];
   const { user, isAuthenticated } = useAuth0();
-  console.log(user);
+  const { setCategory, setFeedUrl } = useContext(FeedContext);
   return isAuthenticated ? (
     <>
       <div className="container section-profile">
