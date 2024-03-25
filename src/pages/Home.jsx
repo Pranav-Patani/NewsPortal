@@ -54,7 +54,7 @@ const Home = () => {
       url: "http://timesofindia.indiatimes.com/rssfeeds/913168846.cms",
     },
     {
-      name: "Entertainmetn",
+      name: "Entertainment",
       url: "http://timesofindia.indiatimes.com/rssfeeds/1081479906.cms",
     },
     {

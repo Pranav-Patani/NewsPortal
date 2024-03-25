@@ -2,7 +2,7 @@ import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 
 // Creating a context for the feed data
-const FeedContext = createContext([]);
+const FeedContext = createContext({});
 
 // FeedProvider component to manage and provide feed data
 export const FeedProvider = ({ children }) => {

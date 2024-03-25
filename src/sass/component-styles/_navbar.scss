@@ -8,6 +8,8 @@
   &__search-bar {
     width: 30%;
     transition: 0.2s;
+    position: relative;
+    left: 1rem;
 
     &:active {
       border: 2px solid var(--color-primary-light);
@@ -34,18 +36,31 @@
     }
   }
 
-  &__search-btn {
-    border: 1px solid var(--color-primary);
-    &:hover {
-      border: 1px solid var(--color-primary-light);
+  &__search-icon {
+    color: var(--color-primary-light);
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+    width: auto;
+
+    &:hover &__tip {
+      visibility: visible;
     }
-    &:active {
-      border: 1px solid var(--color-primary-dark);
+    &__tip {
+      transition: all 0.1s;
+      position: relative;
+      right: 2rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.85rem;
+      background-color: rgba(38, 38, 38, 0.8);
+      color: var(--color-white);
+      border-radius: 0.3rem;
+      visibility: hidden;
     }
   }
 
   &__login {
-    margin-left: 1rem;
+    margin: 0 1rem 0 2.5rem;
     background-color: var(--color-primary);
     color: var(--color-white);
     transition: all 0.3s;

@@ -1,11 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
-import logo from "/svg-logo.svg";
-import Dropdown from "react-bootstrap/Dropdown";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import Dropdown from "react-bootstrap/Dropdown";
+import logo from "/svg-logo.svg";
+import SearchContext from "../contexts/SearchContext";
+import { FaSearch } from "react-icons/fa";
 
 // Navbar component
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
+  const { handleSearch } = useContext(SearchContext);
   return (
     <>
       {/* Navigation bar with fixed-top and expanded options */}
@@ -117,12 +121,16 @@ const Navbar = () => {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              onChange={(e) => handleSearch(e)}
             />
 
             {/* Search button */}
-            <button className="btn custom-navbar__search-btn" type="submit">
-              Search
-            </button>
+            <div className="custom-navbar__search-icon">
+              <FaSearch />
+              <div className="custom-navbar__search-icon__tip">
+                Type to search
+              </div>
+            </div>
 
             {/* Login button */}
             <button

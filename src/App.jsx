@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import NewsList from "./pages/NewsList";
 import UserProfile from "./pages/UserProfile";
 import Footer from "./components/Footer";
-import FeedContext from "./contexts/FeedContext";
+import Search from "./pages/Search";
 
 // App component
 const App = () => {
@@ -25,6 +25,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/news/:category" element={<NewsList />} />
         <Route path="/user" element={<UserProfile />} />
+        <Route path="/search" element={<Search />} />
       </Routes>
 
       {/* Footer component rendered at the bottom */}
