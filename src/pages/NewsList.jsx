@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import FeedContext from "../contexts/FeedContext";
+import { nanoid } from "nanoid";
 
 const NewsList = () => {
   const categoryList = [
@@ -89,16 +90,9 @@ const NewsList = () => {
         <h1 className="section__news-list__heading">{category}</h1>
         <div className="section__news-list__content">
           {filteredArticles.map(
-            ({
-              guid,
-              title,
-              contentSnippet,
-              link,
-              pubDate,
-              enclosure: { url },
-            }) => (
+            ({ title, contentSnippet, link, pubDate, enclosure: { url } }) => (
               <div
-                key={guid}
+                key={nanoid()}
                 className="section__news-list__content__card card mb-3"
               >
                 <img

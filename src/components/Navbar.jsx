@@ -6,7 +6,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 // Navbar component
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
-  const navigate = useNavigate();
   return (
     <>
       {/* Navigation bar with fixed-top and expanded options */}

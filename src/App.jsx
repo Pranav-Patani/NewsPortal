@@ -13,8 +13,6 @@ import FeedContext from "./contexts/FeedContext";
 
 // App component
 const App = () => {
-  const { feedUrl } = useContext(FeedContext);
-  console.log(feedUrl);
   // Rendering components based on routes
   return (
     <>

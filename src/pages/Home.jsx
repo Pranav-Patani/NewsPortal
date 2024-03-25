@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Carousel from "../components/Carousel";
 import NewsCards from "../components/NewsCards";
