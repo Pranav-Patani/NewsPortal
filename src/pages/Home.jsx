@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import NewsCards from "../components/NewsCards";
 import FeedContext from "../contexts/FeedContext";
+import { nanoid } from "nanoid";
 
 // Home component
 const Home = () => {
@@ -111,9 +112,9 @@ const Home = () => {
           {/* Container for the news cards */}
           <div className="custom-home__news-cards-container__card-container">
             {/* Mapping through articles and rendering NewsCards for each */}
-            {articles.map(({ guid, title, link, enclosure: { url } }) => (
+            {articles.map(({ title, link, enclosure: { url } }) => (
               <div
-                key={guid}
+                key={nanoid()}
                 className="custom-home__news-cards-container__card-container__card"
               >
                 <NewsCards title={title} link={link} imgUrl={url} />
