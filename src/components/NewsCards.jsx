@@ -3,7 +3,7 @@ const NewsCards = ({ title, link, imgUrl }) => {
   return (
     <>
       {/* News card container with custom styling */}
-      <div className="card custom-newscard" style={{ width: 18 + "rem" }}>
+      <div className="card custom-newscard">
         {/* Image section using the 'sample' image */}
         <img src={imgUrl} className="card-img-top" alt="news" />
 

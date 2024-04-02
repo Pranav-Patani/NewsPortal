@@ -4,9 +4,28 @@
   --color-secondary: #83c0c1;
   --color-secondary-light: #96e9c6;
   --color-gray: #262626;
+  --color-gray-light: #404040;
   --color-white: #fafafa;
-  --color-offwhite: #d4d4d4 //newtural-300
-  --color-black: #0a0a0a; }
+  --color-offwhite: #d4d4d4;
+  --color-black: #0a0a0a;
+  --body-gradient-1: rgba(250, 250, 250, 1);
+  --body-gradient-2: rgba(212, 212, 212, 1);
+  --body-gradient-3: rgba(250, 250, 250, 1);
+  --navbar-bg: var(--color-white);
+  --text-color: var(--color-gray);
+  --text-color-muted: #737373;
+  --search-bg: var(--color-white);
+  --card-bg: var(--color-white); }
+
+[data-theme="dark"] {
+  --body-gradient-1: rgba(48, 48, 48, 1);
+  --body-gradient-2: rgba(30, 30, 30, 1);
+  --body-gradient-3: rgba(28, 28, 28, 1);
+  --navbar-bg: var(--color-gray);
+  --text-color-muted: #a3a3a3;
+  --text-color: var(--color-white);
+  --search-bg: var(--color-gray);
+  --card-bg: var(--color-gray-light); }
 
 *,
 *::before,
@@ -23,16 +42,16 @@ body {
   font-family: "Spectral", serif;
   font-weight: 400;
   font-size: 16px;
-  color: var(--color-gray);
+  color: var(--text-color);
   line-height: 1.7;
-  background-image: linear-gradient(120deg, #fafafa 0%, #d4d4d4 35%, #fafafa 100%); }
+  background-image: linear-gradient(120deg, var(--body-gradient-1) 0%, var(--body-gradient-2) 35%, var(--body-gradient-3) 100%); }
 
 .custom-home {
   margin-top: 6.5rem;
   display: flex;
   flex-direction: column; }
   .custom-home__categories-container__heading {
-    margin: 2rem 0; }
+    margin: 1rem 0; }
   .custom-home__categories-container__categories-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -82,12 +101,16 @@ body {
     .section__news-list__content__card {
       margin: 1.5rem auto 1.5rem auto;
       width: 70%;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: var(--card-bg);
+      color: var(--text-color); }
       .section__news-list__content__card-img {
         height: 12rem;
         object-fit: cover; }
       .section__news-list__content__card-body {
         box-shadow: -1px -4px 23px -6px #0a0a0a; }
+        .section__news-list__content__card-body__date {
+          color: var(--text-color-muted); }
         .section__news-list__content__card-body__title {
           font-size: 20px;
           font-weight: bold; }
@@ -99,7 +122,8 @@ body {
           transition: all 0.3s; }
           .section__news-list__content__card-body__btn:hover {
             background-color: var(--color-white);
-            border: 1px solid var(--color-primary); }
+            border: 1px solid var(--color-primary);
+            color: var(--color-gray); }
 
 .section-profile {
   margin: 7.5rem auto 0 auto;
@@ -114,7 +138,7 @@ body {
     flex-wrap: wrap; }
   .section-profile__user-details {
     position: relative;
-    background-color: var(--color-white);
+    background-color: var(--card-bg);
     border-radius: 0.5rem;
     width: 50%;
     justify-content: center;
@@ -141,7 +165,7 @@ body {
       top: -3rem;
       left: 15%; }
   .section-profile__user-preferences {
-    background-color: var(--color-white);
+    background-color: var(--card-bg);
     border-radius: 0.5rem; }
     .section-profile__user-preferences__heading-container {
       height: 5rem;
@@ -185,36 +209,72 @@ body {
           color: var(--color-gray);
           cursor: pointer; }
 
-.custom-carousel {
-  width: 77%;
-  margin: auto;
-  border-radius: 0.7rem; }
-  .custom-carousel__img {
-    background-image: linear-gradient(to bottom right, black, black);
-    border-radius: 0.7rem;
-    width: 100%; }
+.carousel-paper {
+  height: 85vh;
+  margin-top: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+  .carousel-paper__text {
+    color: var(--color-white);
+    background-color: rgba(3, 3, 3, 0.8);
+    min-height: 8.6rem;
+    padding: 0.5rem 2rem;
+    text-align: center; }
+    .carousel-paper__text__title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem; }
+    .carousel-paper__text__link {
+      text-decoration: none;
+      color: var(--color-white);
+      border: 1px solid var(--color-primary-light);
+      padding: 0.3rem 1rem;
+      border-radius: 0.2rem;
+      transition: all 0.3s; }
+      .carousel-paper__text__link:hover {
+        color: var(--color-black);
+        background-color: var(--color-offwhite); }
+
+.dark-mode__btn {
+  background-color: inherit;
+  border: none; }
 
 .custom-navbar {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: var(--navbar-bg) !important; }
   .custom-navbar__logo {
     width: 12rem;
     margin: 0 1rem; }
+  .custom-navbar__dropdown__toggle {
+    color: var(--text-color); }
   .custom-navbar__search-bar {
     width: 30%;
     transition: 0.2s;
     position: relative;
-    left: 1rem; }
+    left: 1rem;
+    background-color: var(--search-bg); }
+    .custom-navbar__search-bar::placeholder {
+      color: var(--text-color); }
     .custom-navbar__search-bar:active {
       border: 2px solid var(--color-primary-light); }
-  .custom-navbar__btn::after {
-    display: block;
-    content: "";
-    width: 0%;
-    height: 0.1rem;
-    background-image: linear-gradient(to right, var(--color-white), 25%, var(--color-primary));
-    transition: 0.3s; }
-  .custom-navbar__btn:hover::after {
-    width: 100%; }
+  .custom-navbar__btn {
+    color: var(--text-color); }
+    .custom-navbar__btn:focus {
+      border: none; }
+    .custom-navbar__btn:hover {
+      color: var(--text-color-muted); }
+    .custom-navbar__btn::after {
+      display: block;
+      content: "";
+      width: 0%;
+      height: 0.1rem;
+      background-image: linear-gradient(to right, var(--color-white), 25%, var(--color-primary));
+      transition: 0.3s; }
+    .custom-navbar__btn:hover::after {
+      width: 100%; }
   .custom-navbar__search-icon {
     color: var(--color-primary-light);
     position: relative;
@@ -263,7 +323,10 @@ body {
 
 .custom-newscard {
   height: 100%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 18rem;
+  background-color: var(--card-bg);
+  color: var(--text-color); }
   .custom-newscard__btn {
     background-color: var(--color-primary);
     color: var(--color-white);

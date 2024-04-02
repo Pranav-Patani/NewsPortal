@@ -107,8 +107,8 @@ const NewsList = () => {
                   <p className="section__news-list__content__card-body__text card-text">
                     {contentSnippet.substring(0, 300)}...
                   </p>
-                  <p className="section__news-list__content__card-body__date card-text">
-                    <small className="text-muted">
+                  <p className="card-text">
+                    <small className="section__news-list__content__card-body__date">
                       Published: {getDate(pubDate)}
                     </small>
                   </p>

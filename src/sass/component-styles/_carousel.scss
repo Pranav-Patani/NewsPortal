@@ -1,10 +1,37 @@
-.custom-carousel {
-  width: 77%;
-  margin: auto;
-  border-radius: 0.7rem;
-  &__img {
-    background-image: linear-gradient(to bottom right, black, black);
-    border-radius: 0.7rem;
-    width: 100%;
+.carousel-paper {
+  height: 85vh;
+  margin-top: 4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__text {
+    color: var(--color-white);
+    background-color: rgba(3, 3, 3, 0.8);
+    min-height: 8.6rem;
+    padding: 0.5rem 2rem;
+    text-align: center;
+
+    &__title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: var(--color-white);
+      border: 1px solid var(--color-primary-light);
+      padding: 0.3rem 1rem;
+      border-radius: 0.2rem;
+      transition: all 0.3s;
+
+      &:hover {
+        color: var(--color-black);
+        background-color: var(--color-offwhite);
+      }
+    }
   }
 }

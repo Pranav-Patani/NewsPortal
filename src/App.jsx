@@ -10,6 +10,7 @@ import NewsList from "./pages/NewsList";
 import UserProfile from "./pages/UserProfile";
 import Footer from "./components/Footer";
 import Search from "./pages/Search";
+import NewsCarousel from "./components/NewsCarousel";
 
 // App component
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
     <>
       {/* Navbar component rendered at the top */}
       <Navbar />
-
+      <NewsCarousel />
       {/* Routes component for handling navigation */}
       <Routes>
         {/* Route for the Home page */}

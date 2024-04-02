@@ -1,15 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import Dropdown from "react-bootstrap/Dropdown";
 import logo from "/svg-logo.svg";
+import whiteLogo from "/white-svg-logo.svg";
 import SearchContext from "../contexts/SearchContext";
 import { FaSearch } from "react-icons/fa";
+import DarkMode from "./DarkMode";
+import FeedContext from "../contexts/FeedContext";
 
 // Navbar component
 const Navbar = () => {
   const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const { handleSearch } = useContext(SearchContext);
+  const { isDarkMode } = useContext(FeedContext);
+  const navigate = useNavigate();
   return (
     <>
       {/* Navigation bar with fixed-top and expanded options */}
@@ -17,7 +22,11 @@ const Navbar = () => {
         <div className="container-fluid">
           {/* Link to home with logo */}
           <Link to="/">
-            <img src={logo} alt="logo" className="custom-navbar__logo" />
+            <img
+              src={isDarkMode ? whiteLogo : logo}
+              alt="logo"
+              className="custom-navbar__logo"
+            />
           </Link>
 
           {/* Navbar toggler button for mobile view */}
@@ -51,7 +60,7 @@ const Navbar = () => {
 
               {/* About Us link */}
               <li className="nav-item">
-                <Link className="nav-link" to="/about-us">
+                <Link className="nav-link" to="/">
                   <button type="button" className="btn custom-navbar__btn">
                     About Us
                   </button>
@@ -78,40 +87,42 @@ const Navbar = () => {
                   marginLeft: 0.5 + "rem",
                 }}
               >
-                {isAuthenticated ? (
-                  <Dropdown>
-                    <Dropdown.Toggle variant="none" id="dropdown-basic">
-                      Settings
-                    </Dropdown.Toggle>
+                <Dropdown className="custom-navbar__dropdown">
+                  <Dropdown.Toggle
+                    className="custom-navbar__dropdown__toggle"
+                    variant="none"
+                    id="dropdown-basic"
+                  >
+                    Settings
+                  </Dropdown.Toggle>
 
-                    {/* Dropdown menu with options */}
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Theme</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">
-                        Preferences
-                      </Dropdown.Item>
-                      <Dropdown.Item
-                        className="custom-navbar__settings__logout"
-                        href="#/action-3"
+                  {/* Dropdown menu with options */}
+                  <Dropdown.Menu>
+                    <Dropdown.Item>
+                      <DarkMode />
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => navigate(`/user`)}>
+                      Preferences
+                    </Dropdown.Item>
+                    <Dropdown.Item className="custom-navbar__settings__logout">
+                      <button
+                        className="custom-navbar__settings__logout-btn"
+                        onClick={
+                          isAuthenticated
+                            ? () =>
+                                logout({
+                                  logoutParams: {
+                                    returnTo: window.location.origin,
+                                  },
+                                })
+                            : () => loginWithRedirect()
+                        }
                       >
-                        <button
-                          className="custom-navbar__settings__logout-btn"
-                          onClick={() =>
-                            logout({
-                              logoutParams: {
-                                returnTo: window.location.origin,
-                              },
-                            })
-                          }
-                        >
-                          Logout
-                        </button>
-                      </Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-                ) : (
-                  ""
-                )}
+                        {isAuthenticated ? `Logout` : `Login`}
+                      </button>
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
               </li>
             </ul>
 

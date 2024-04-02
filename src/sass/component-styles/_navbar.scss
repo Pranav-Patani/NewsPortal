@@ -1,15 +1,31 @@
+.dark-mode__btn {
+  background-color: inherit;
+  border: none;
+}
+
 .custom-navbar {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: var(--navbar-bg) !important;
   &__logo {
     width: 12rem;
     margin: 0 1rem;
   }
 
+  &__dropdown {
+    &__toggle {
+      color: var(--text-color);
+    }
+  }
+
   &__search-bar {
+    &::placeholder {
+      color: var(--text-color);
+    }
     width: 30%;
     transition: 0.2s;
     position: relative;
     left: 1rem;
+    background-color: var(--search-bg);
 
     &:active {
       border: 2px solid var(--color-primary-light);
@@ -17,6 +33,14 @@
   }
 
   &__btn {
+    color: var(--text-color);
+
+    &:focus {
+      border: none;
+    }
+    &:hover {
+      color: var(--text-color-muted);
+    }
     &::after {
       display: block;
       content: "";
