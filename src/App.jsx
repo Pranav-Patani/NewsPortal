@@ -17,20 +17,25 @@ const App = () => {
   // Rendering components based on routes
   return (
     <>
-      {/* Navbar component rendered at the top */}
-      <Navbar />
-      <NewsCarousel />
-      {/* Routes component for handling navigation */}
-      <Routes>
-        {/* Route for the Home page */}
-        <Route path="/" element={<Home />} />
-        <Route path="/news/:category" element={<NewsList />} />
-        <Route path="/user" element={<UserProfile />} />
-        <Route path="/search" element={<Search />} />
-      </Routes>
+      <div className="app">
+        {/* Navbar component rendered at the top */}
+        <Navbar />
+        <div className="app__main">
+          {/* Routes component for handling navigation */}
+          <Routes>
+            {/* Route for the Home page */}
+            <Route path="/" element={<Home />} />
+            <Route path="/news/:category" element={<NewsList />} />
+            <Route path="/user" element={<UserProfile />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </div>
 
-      {/* Footer component rendered at the bottom */}
-      <Footer />
+        {/* Footer component rendered at the bottom */}
+        <div className="app__footer">
+          <Footer />
+        </div>
+      </div>
     </>
   );
 };

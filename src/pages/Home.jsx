@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-
-import Carousel from "../components/NewsCarousel";
+import NewsCarousel from "../components/NewsCarousel";
 import NewsCards from "../components/NewsCards";
 import FeedContext from "../contexts/FeedContext";
 import { nanoid } from "nanoid";
@@ -74,11 +73,10 @@ const Home = () => {
     <>
       {/* Container for the home page with custom styling */}
       <div className="container text-center custom-home">
-        {/* <h2>Top News</h2> */}
-        {/* Container for the carousel */}
-        {/* <div className="carousel-container">
-          <Carousel />
-        </div> */}
+        {/* Container for the carousel  */}
+        <div className="carousel-container">
+          <NewsCarousel />
+        </div>
 
         <div className="custom-home__categories-container">
           <h2 className="custom-home__categories-container__heading">

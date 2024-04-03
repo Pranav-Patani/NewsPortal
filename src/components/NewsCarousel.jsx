@@ -20,7 +20,7 @@ const NewsCarousel = () => {
 
 const Item = ({ item }) => {
   return (
-    <Paper style={{ width: 100 + "%" }}>
+    <Paper>
       <div
         className="carousel-paper"
         style={{ backgroundImage: `url(${item.enclosure.url})` }}

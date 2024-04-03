@@ -44,7 +44,8 @@ body {
   font-size: 16px;
   color: var(--text-color);
   line-height: 1.7;
-  background-image: linear-gradient(120deg, var(--body-gradient-1) 0%, var(--body-gradient-2) 35%, var(--body-gradient-3) 100%); }
+  background-image: linear-gradient(120deg, var(--body-gradient-1) 0%, var(--body-gradient-2) 35%, var(--body-gradient-3) 100%);
+  background-repeat: no-repeat; }
 
 .custom-home {
   margin-top: 6.5rem;
@@ -209,6 +210,16 @@ body {
           color: var(--color-gray);
           cursor: pointer; }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  .app__main {
+    background-image: linear-gradient(120deg, var(--body-gradient-1) 0%, var(--body-gradient-2) 35%, var(--body-gradient-3) 100%);
+    background-repeat: no-repeat; }
+  .app__footer {
+    margin-top: auto; }
+
 .carousel-paper {
   height: 85vh;
   margin-top: 4rem;
@@ -313,7 +324,7 @@ body {
 .custom-footer {
   background-color: var(--color-gray);
   width: 100%;
-  margin: 2rem 0 0 0; }
+  margin-top: auto; }
   .custom-footer__link {
     color: var(--color-white); }
     .custom-footer__link:hover {
