@@ -10,11 +10,13 @@ const NewsCarousel = () => {
   const trimmedArticles = articles.slice(16, 19);
 
   return location.pathname == "/" ? (
-    <Carousel navButtonsAlwaysVisible>
-      {trimmedArticles.map((item, i) => (
-        <Item key={i} item={item} />
-      ))}
-    </Carousel>
+    <div className="carousel">
+      <Carousel navButtonsAlwaysVisible>
+        {trimmedArticles.map((item, i) => (
+          <Item key={i} item={item} />
+        ))}
+      </Carousel>
+    </div>
   ) : null;
 };
 

@@ -26,7 +26,7 @@ const UserProfile = () => {
       url: "http://timesofindia.indiatimes.com/rssfeeds/913168846.cms",
     },
   ];
-  const { user, isAuthenticated } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const { setCategory, setFeedUrl } = useContext(FeedContext);
   return isAuthenticated ? (
     <>
@@ -94,13 +94,20 @@ const UserProfile = () => {
     </>
   ) : (
     <>
-      <div className="container section-profile">
-        <div
-          className="row section-profile__heading"
+      <div className="container section-profile__logout">
+        <p
+          className="row section-profile__logout__heading"
           style={{ height: 55 + "vh" }}
         >
           Please login to continue.
-        </div>
+        </p>
+        <button
+          className="btn section-profile__logout__btn"
+          type="submit"
+          onClick={() => loginWithRedirect()}
+        >
+          {isAuthenticated ? `Logout` : `Login`}
+        </button>
       </div>
     </>
   );

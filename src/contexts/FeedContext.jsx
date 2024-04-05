@@ -16,7 +16,15 @@ export const FeedProvider = ({ children }) => {
   const getArticles = async () => {
     try {
       const { data } = await axios.get("http://localhost:4000/");
-      setArticles(data);
+      const unFilteredArticles = data;
+      const filteredArticles = unFilteredArticles.filter(
+        (item, index) =>
+          index ===
+          unFilteredArticles.findIndex(
+            (obj) => JSON.stringify(item) === JSON.stringify(obj)
+          )
+      );
+      setArticles(filteredArticles);
     } catch (error) {
       console.log(error);
     }

@@ -101,6 +101,7 @@ const Navbar = () => {
                     <Dropdown.Item>
                       <DarkMode />
                     </Dropdown.Item>
+
                     <Dropdown.Item onClick={() => navigate(`/user`)}>
                       Preferences
                     </Dropdown.Item>
