@@ -220,6 +220,32 @@ body {
   .app__footer {
     margin-top: auto; }
 
+.section-about {
+  max-width: 1440px;
+  margin: 6.5rem auto 0 auto;
+  display: flex;
+  justify-content: space-between; }
+  .section-about__text {
+    flex-basis: 50%;
+    padding: 1rem 2rem;
+    margin: 0 0 0 5rem; }
+  .section-about__img-container {
+    margin: auto;
+    flex-basis: 50%;
+    padding: 1rem 2rem; }
+    .section-about__img-container__img {
+      width: 85%;
+      margin: auto;
+      padding: 0.5rem 1rem; }
+
+@media screen and (max-width: 1090px) {
+  .section-about {
+    flex-direction: column; }
+    .section-about__text {
+      margin: 1rem 2rem; }
+    .section-about__img-container__img {
+      width: 70%; } }
+
 .carousel-paper {
   height: 85vh;
   margin-top: 4rem;

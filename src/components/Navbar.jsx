@@ -60,7 +60,7 @@ const Navbar = () => {
 
               {/* About Us link */}
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/about">
                   <button type="button" className="btn custom-navbar__btn">
                     About Us
                   </button>

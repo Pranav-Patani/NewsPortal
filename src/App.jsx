@@ -10,7 +10,7 @@ import NewsList from "./pages/NewsList";
 import UserProfile from "./pages/UserProfile";
 import Footer from "./components/Footer";
 import Search from "./pages/Search";
-import NewsCarousel from "./components/NewsCarousel";
+import About from "./pages/About";
 
 // App component
 const App = () => {
@@ -28,6 +28,7 @@ const App = () => {
             <Route path="/news/:category" element={<NewsList />} />
             <Route path="/user" element={<UserProfile />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
 

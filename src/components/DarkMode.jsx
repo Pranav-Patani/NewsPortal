@@ -2,7 +2,7 @@ import { useContext } from "react";
 import FeedContext from "../contexts/FeedContext";
 
 const DarkMode = () => {
-  const { isDarkMode, setIsDarkMode } = useContext(FeedContext);
+  const { setIsDarkMode } = useContext(FeedContext);
 
   const setDarkMode = () => {
     document.querySelector("body").setAttribute("data-theme", "dark");
