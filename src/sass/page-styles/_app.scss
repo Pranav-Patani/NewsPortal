@@ -4,13 +4,9 @@
   height: 100vh;
 
   &__main {
-    background-image: linear-gradient(
-      120deg,
-      var(--body-gradient-1) 0%,
-      var(--body-gradient-2) 35%,
-      var(--body-gradient-3) 100%
-    );
-    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 1000%;
   }
 
   &__footer {

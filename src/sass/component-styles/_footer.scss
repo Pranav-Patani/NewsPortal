@@ -1,13 +1,19 @@
 .custom-footer {
-  background-color: var(--color-gray);
+  background-color: var(--footer-bg);
   width: 100%;
   margin-top: auto;
 
   &__link {
     color: var(--color-white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
 
     &:hover {
       color: var(--color-primary-light);
+    }
+
+    &:active {
+      color: var(--color-primary);
     }
   }
 

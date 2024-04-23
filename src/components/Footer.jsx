@@ -7,33 +7,32 @@ const Footer = () => {
     <>
       {/* Footer section with padding and custom styling */}
       <footer className="py-3 custom-footer">
-
         {/* Navigation links with justify-content-center and border-bottom */}
         <ul className="nav justify-content-center border-bottom pb-3 mb-3">
           {/* Home link */}
           <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
+            <Link to="/" className="custom-footer__link">
               Home
             </Link>
           </li>
 
           {/* About link */}
           <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
+            <Link to="/about" className="custom-footer__link">
               About
             </Link>
           </li>
 
           {/* Credits link */}
           <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
+            <Link to="/credits" className="custom-footer__link">
               Credits
             </Link>
           </li>
 
           {/* Contact link */}
           <li className="nav-item">
-            <Link to="/" className="nav-link custom-footer__link">
+            <Link to="/contact" className="custom-footer__link">
               Contact
             </Link>
           </li>
